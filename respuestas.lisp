@@ -28,7 +28,8 @@
       ((eq intencion 'educativo)
        (responder-sobre-lisp input))
 
-      ((eq intencion 'matematicas)
+      ;; Detectar si es una expresión matemática
+      ((es-operacion-matematica input)
        (resolver-expresion-matematica input))
 
       ((eq intencion 'jugar)

@@ -1,16 +1,22 @@
+(defun es-operacion-matematica (input)
+  "Verifica si la entrada es una operación matemática básica."
+  (or (search "+" input)
+      (search "-" input)
+      (search "*" input)
+      (search "/" input)))
+
 (defun detectar-intencion (input)
   "Detecta la intención del usuario según la entrada."
   (cond
-    ;; Saludos comunes y coloquiales
+    ;; Saludos 
     ((or (search "hola" input)
          (search "buenos dias" input)
          (search "buenas tardes" input)
-         (search "qué onda" input)    ;; Coloquial: ¿Qué onda?
+         (search "qué onda" input)    
          (search "qué tal" input)
-         (search "qué tranza" input)  ;; Coloquial: ¿Qué tranza?
-         (search "qué pedo" input)    ;; Coloquial: ¿Qué pedo?
-         (search "qué show" input)    ;; Coloquial: ¿Qué show?
-         (search "qué hay" input))    ;; Coloquial: ¿Qué hay?
+         (search "qué tranza" input) 
+         (search "qué show" input)    
+         (search "qué hay" input))    
      'saludo)
 
     ;; Despedidas comunes y coloquiales
@@ -18,9 +24,9 @@
          (search "hasta luego" input)
          (search "nos vemos" input)
          (search "me voy" input)
-         (search "ahí nos vemos" input) ;; Coloquial: Ahí nos vemos
+         (search "ahí nos vemos" input) 
          (search "bye" input)
-         (search "cuídate" input))       ;; Coloquial: Cuídate
+         (search "cuídate" input))       
      'despedida)
 
     ;; El usuario proporciona su nombre
@@ -33,7 +39,7 @@
     ((search "quiero jugar" input) 'jugar)
 
     ;; Resolución de expresiones matemáticas
-    ((or (search "+" input) (search "-" input) (search "*" input) (search "/" input)) 'matematicas)
+    ((es-operacion-matematica input) 'matematicas)
 
     ;; Estado del chatbot o cómo se siente
     ((or (search "como estas" input) (search "que tal" input) (search "cómo va todo" input)) 'estado)
