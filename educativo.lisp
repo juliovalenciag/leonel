@@ -98,7 +98,7 @@
     ;; Función `format` en LISP
     ((or (search "format en lisp" input)
          (search "que hace format" input))
-     (format t "La función 'format' da formato a cadenas. Ejemplo: (format t \"Hola, ~a\" 'Mundo) imprime 'Hola, Mundo'.~%"))
+     (format t "La función 'format' da formato a cadenas. Ejemplo: (format t \"Hola,\" 'Mundo) imprime 'Hola, Mundo'.~%"))
 
     ;; Macros en LISP
     ((or (search "macros en lisp" input)

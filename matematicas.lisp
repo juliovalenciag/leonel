@@ -7,8 +7,7 @@
 
 (defun parsear-expresion (input)
   "Extrae los números y el operador de una expresión matemática."
-  (let* ((partes (remove-if-not #'digit-char-p input))
-         (operador (find-if #'(lambda (c) (member c '(#\+ #\- #\* #\/))) input)))
+  (let* ((operador (find-if #'(lambda (c) (member c '(#\+ #\- #\* #\/))) input)))
     (values (subseq input 0 (position operador input))
             operador
             (subseq input (1+ (position operador input))))))
