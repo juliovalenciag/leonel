@@ -5,7 +5,10 @@
 (load "juego.lisp")
 (load "respuestas.lisp")
 
+(defparameter *nombre-usuario* nil)
+
 (defun iniciar-chatbot ()
+  "Inicia el chatbot principal Leonel."
   (format t "¡Hola! Soy Leonel, tu chatbot. Pregúntame sobre LISP, algo cotidiano, o si quieres jugar, dime 'quiero jugar'.~%")
   (loop
     (let ((input (read-line)))

@@ -24,7 +24,7 @@
      'despedida)
 
     ;; El usuario proporciona su nombre
-    ((or (search "me llamo" input) (search "mi nombre es" input)) 'nombre)
+    ((or (search "me llamo" input) (search "mi nombre es" input) (search "soy" input)) 'nombre)
 
     ;; Pregunta educativa sobre LISP
     ((search "lisp" input) 'educativo)
